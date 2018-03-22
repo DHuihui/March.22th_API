@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>qq音乐</title>
+	<style type="text/css">
+		*{margin:0px;pading:0px;}
+		ul{list-style: none;width:500px;margin:0px auto;}
+		.search_song{width:300px;margin:10px auto;}
+	</style>
+</head>
+<body>
+<div class="search_song">
+<input type=" text" name="" placeholder="请输入歌曲、歌手名称">
+<button id="search" type="button">搜索</button>
+</div>
+<div id="song">
+</div>
+<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#search").click(function(){
+			var str=$("input").val();
+			var api="https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=49792539451938746&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=1&n=20&w="+str+"&g_tk=5381&&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0";
+			if(!str){
+				return;
+			}
+			$.ajax({
+				url:api,
+				type:"get",
+				dataType:"jsonp",
+				jsonp:'jsonpCallback',
+				success:function(data){
+					console.log(data);
+					var arr=data.data.song.list;
+					// console.log(arr);
+					var singer=data.data.keyword;
+					// console.log(singer);
+					temp="<ul>";
+					for(var i=0;i<arr.length;i++){
+						if(arr[i].desc){
+						temp+="<li>"+arr[i].desc+"-"+singer+"</li>";
+						}
+					}
+					temp+="</ul>";
+					$("#song").html(temp);
+				}
+			}) 
+		})
+	})
+</script>
+</body>
+</html>

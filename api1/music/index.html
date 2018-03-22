@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=1.0">
+	<title></title>
+</head>
+<body>
+	<div class="music-list">
+		
+	</div>
+	<button id="send">发送请求</button>
+	<script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#send").click(function(){
+			/*$.get('http://outsideofthecity.com/my/api/music.json',function(data){
+				var mContent = $(".music-list");
+				var temp = data.songData;
+				var str = '<ul>';
+				for(var i=0;i<temp.length;i++){
+					str += '<li>' + temp[i].songname + '-' + temp[i].singer[0] + '</li>';
+				}
+				str += '</ul>';
+				mContent.append(str);
+			},'json');*/
+
+			$.ajax({
+				url:"http://outsideofthecity.com/my/api/index.php",
+				type:'get',
+				dataType:'jsonp',
+				jsonp:'_jp',
+				jsonpCallback:'callback',
+				success:function(data){
+					var mContent = $(".music-list");
+					var temp = data.songData;
+					var str = '<ul>';
+					for(var i=0;i<temp.length;i++){
+						str += '<li>' + temp[i].songname + '-' + temp[i].singer[0] + '</li>';
+					}
+					str += '</ul>';
+					mContent.append(str);
+				}
+			});
+		});
+	});
+
+	/*function callback(data){
+		var mContent = $(".music-list");
+		var temp = data.songData;
+		var str = '<ul>';
+		for(var i=0;i<temp.length;i++){
+			str += '<li>' + temp[i].songname + '-' + temp[i].singer[0] + '</li>';
+		}
+		str += '</ul>';
+		mContent.append(str);
+	}*/
+	</script>
+</body>
+</html>

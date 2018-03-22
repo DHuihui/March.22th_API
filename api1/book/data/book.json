@@ -1,0 +1,35 @@
+{
+	"code":0,
+	"book":[
+		{
+			"img":"images/jpg01.jpg",
+			"bookname":"我不",
+			"writer":"大冰",
+			"price":"￥39",
+		},
+		{
+			"img":"images/jpg02.jpg",
+			"bookname":"从你的全世界路过",
+			"writer":"张嘉佳",
+			"price":"￥39.8",
+		},
+		{
+			"img":"images/jpg03.jpg",
+			"bookname":"解忧杂货店",
+			"writer":"东野圭吾",
+			"price":"￥39.5",
+		},
+		{
+			"img":"images/jpg04.jpg",
+			"bookname":"撒哈拉的故事",
+			"writer":"三毛",
+			"price":"￥34",
+		},
+		{
+			"img":"images/jpg05.jpg",
+			"bookname":"我在未来等你",
+			"writer":"刘同",
+			"price":"￥42",
+		}
+	]
+}
