@@ -1,0 +1,60 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #eee;
+}
+
+.goods {
+  width: 100%;
+  height: calc(100vh - 200px);
+  background: #fff;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  padding: 0px 10px;
+}
+
+.goods .base-info {
+  position: relative;
+  height: 80px;
+}
+
+.goods .base-info .thumb {
+  width: 100px;
+  height: 100px;
+  background: #fd2f2f;
+  position: absolute;
+  top: -20px;
+}
+
+.goods .base-info .detail {
+  width: calc(100vw - 100px - 20px);
+  float: right;
+  background: #4195a9;
+  height: 80px;
+}
+
+.goods .ensure button {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  line-height: 50px;
+  background: red;
+  color: #fff;
+  font-size: 16px;
+  left: 0px;
+  border: none;
+}
+
+.goods .size li, .goods .taste li {
+  width: 150px;
+  padding: 5px 0px;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */
